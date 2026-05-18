@@ -44,11 +44,11 @@ Scope 2 is sourced in priority order: (1) reported location-based from LSEG, (2)
 
 ## Key Constructs
 
-**Grid factor** — state-level electricity emissions intensity (`egrid_ef_lb_per_mwh`), a property of where the firm operates, not how it operates. Firms are split into High Grid / Low Grid at the sample median (822 lb CO₂e / MWh).
+**Grid factor**: state-level electricity emissions intensity (`egrid_ef_lb_per_mwh`), a property of where the firm operates, not how it operates. Firms are split into High Grid / Low Grid at the sample median (822 lb CO₂e / MWh).
 
-**Firm factor** — Scope 1 emissions (lb CO₂e) divided by energy use (MWh), measuring how carbon-intensive the firm's own operations are, independent of the local electricity mix. Split at the sample median into High / Low.
+**Firm factor**: Scope 1 emissions (lb CO₂e) divided by energy use (MWh), measuring how carbon-intensive the firm's own operations are, independent of the local electricity mix. Split at the sample median into High / Low.
 
-**Firm size** — proxied by `log(facility_count + 1)`, split into Small / Medium / Large by the 25th and 75th percentiles. `data/financial_data.csv` (Total Assets, Market Cap from LSEG) is available but not yet wired into the notebook's size variable.
+**Firm size**: proxied by `log(facility_count + 1)`, split into Small / Medium / Large by the 25th and 75th percentiles. `data/financial_data.csv` (Total Assets, Market Cap from LSEG) is available but not yet wired into the notebook's size variable.
 
 All continuous variables are winsorized at the 1st and 99th percentile. Scope 2 winsorization bounds are computed on the `reported_location` subsample only, to prevent implausibly large eGRID-calculated values from inflating the shared tail.
 
